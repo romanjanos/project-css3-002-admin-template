@@ -10,33 +10,70 @@ body {
 .header--dark{
     background-color: #515764;
     color: rgb(236, 236, 236);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  height: 3rem;
+
 }
 
 .header__title {
-    display: inline-block;
+    display: flex-start;
     font-size: 1.25rem;
+    padding-left: 1rem;
 }
 
 .header__search {
-    display: inline-block;
-    float: right;
-    
+    display: flex-end;
+    font-size: 1,25rem;
+    padding-right: 1rem;
+    margin-left: auto;
 }
 
 .search__input {
-border-radius: 4px;
-padding: 0.75rem, 0.375rem;
+border-top-left-radius: 4px;
+border-bottom-left-radius: 4px;
+border: solid 1px white;
+padding: 0.375rem, 0.75rem;
 font-size: 1.2rem;
-
+margin-right: -3px;
+outline: none;
+transition: border-color 0.15s;
 }
+
+.search__input:focus {
+    border-color: rgb(128, 189, 255)
+}
+
 
 .search__btn {
     background-color: rgb(0, 123, 255);
-
+    border: solid 1px  rgb(0, 123, 255);
+    border: none;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    padding: 0.375rem, 0.75rem;
+    font-size: 1.2rem;
+    color: rgb(236, 236, 236);
+    margin-left: -1px;
 }
+
+main {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+aside {
+    background-color: rgb(33, 37, 41);
+    min-width: 12rem;
+    color: rgb(236, 236, 236);
+}
+
 
 .main__nav {
     background-color: #333741;
+    
 }
 
 .nav__ul {
@@ -45,46 +82,46 @@ font-size: 1.2rem;
     padding: 0;
 }
 
-main {
-    display: flexbox;
-    flex-direction: row;
-}
-
-aside {
-    float: left;
-}
 .content {
-
+    flex-basis: 100%;
+    padding: 0 2rem;
 }
 
 .main__breadcrumb {
-    padding: 1,5rem 1rem;
-    border-radius: 0,25px;
-  list-style: none;
-  background-color: rgb(233, 236, 239);
+    padding: 1rem 1.5rem;
+    border-radius: 0.25rem;
+    list-style: none;
+    background-color: rgb(233, 236, 239);
 
 }
 
 .main__cards {
     display: flex;
     flex-direction: row;
-    flex-flow: row wrap;
-    justify-content: space-evenly;
+
 }
 
 .main__card {
-    border: 1px solid;
+    flex-basis: 100%;
+    margin: 1rem;
+    color: rgb(236, 236, 236);
     border-radius: 0.25rem;
     
 }
 
-.card top {
-    border: 1px solid;
+.card__top {
+    padding: 1.5rem 1.25rem;
+    font-size: 1.1rem;
+    display: flex;
+
 }
 
-.card bottom {
-    border: 1px solid;
-}
+.card__bottom {
+    padding: 1.5rem 1.25rem;
+    font-size: 0.85rem;
+    border-top: solid 1px rgb(255, 255, 255);
+    display: flex;
+    }
 
 .main__card.main__card--blue {
     background-color: rgb(0, 123, 255);
@@ -100,4 +137,8 @@ aside {
 
 .main__card.main__card--red {
     background-color: rgb(220, 53, 69);
+}
+
+.card__top.card__bottom {
+    transition: background-color 0.3s;
 }
